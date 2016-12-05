@@ -29,10 +29,10 @@ public:
 			}
 		}
 		cout<<endl;
-		cout<<"¶Ô½ÇÔªËØÖÃ1£º"<<endl;
+		cout<<"å¯¹è§’å…ƒç´ ç½®1ï¼š"<<endl;
 		Metrix::Print<double>(a);
 		cout<<endl;
-		cout<<"»Ø´ú¹ý³Ì£º"<<endl;
+		cout<<"å›žä»£è¿‡ç¨‹ï¼š"<<endl;
 		for(int i=1; i<3; i++)
 		{
 			for(int j=i-1; j>=0; j--)
@@ -55,17 +55,17 @@ int main(int argv,char *argc[])
 
 	double a[3][4];
 	int MaxLineNum=0,max,flag=0,k=-1;
-	srand(time(0));
-	for (double(*p)[4]=a;p!=a+3;p++)
+	
+	for (int i=0;i<3;i++)
 	{
-		for (double *q=*p;q!=*p+4;q++)
-			(*q)=rand()%100;
+		for (int j=0;j<4;j++)
+			cin>>a[i][j];
 	}
 
-	cout<<"Ëæ»úÉú³ÉÒ»¸ö3ÐÐ4ÁÐµÄ¾ØÕó£º"<<endl;
+	cout<<"è¾“å…¥çš„æ–¹ç¨‹ç»„ä¸ºï¼š"<<endl;
 	Metrix::Print<double>(a);
 	cout<<endl;
-	cout<<"¸ßË¹ÏûÈ¥²½ÖèÈçÏÂ£º"<<endl;
+	cout<<"é«˜æ–¯æ¶ˆåŽ»æ­¥éª¤å¦‚ä¸‹ï¼š"<<endl;
 
 	try
 	{
@@ -100,8 +100,8 @@ int main(int argv,char *argc[])
 					a[k][i]-=a[MaxLineNum][i];
 				}
 			}
-			cout<<"Ö÷ÔªËØ£º"<<"a["<<MaxLineNum<<"]["<<k<<"]="<<max<<endl;
-			cout<<"½»»»¾ØÕóµÄµÚ"<<MaxLineNum<<"ÐÐÓëµÚ"<<k<<"ÐÐµÃ"<<endl;
+			cout<<"ä¸»å…ƒç´ ï¼š"<<"a["<<MaxLineNum<<"]["<<k<<"]="<<max<<endl;
+			cout<<"äº¤æ¢çŸ©é˜µçš„ç¬¬"<<MaxLineNum<<"è¡Œä¸Žç¬¬"<<k<<"è¡Œå¾—"<<endl;
 
 			Metrix::Print<double>(a);
 			for (int i = k; i < 2; i++)
@@ -112,16 +112,16 @@ int main(int argv,char *argc[])
 					a[i+1][j]-=((temp/a[k][k])*a[k][j]);
 				}
 			}
-			cout<<"ÏûÈ¥ºóµÃÐÂ¾ØÕó£º"<<endl;
+			cout<<"æ¶ˆåŽ»åŽå¾—æ–°çŸ©é˜µï¼š"<<endl;
 			Metrix::Print<double>(a);
 		}
 		if(!flag)
-			cout<<"ÏµÊýÎªÆæÒì¾ØÕó£¬¸Ã·½³Ì×éÎÞ½â"<<endl;
+			cout<<"ç³»æ•°ä¸ºå¥‡å¼‚çŸ©é˜µï¼Œè¯¥æ–¹ç¨‹ç»„æ— è§£"<<endl;
 		else
 		{
 			Metrix::Back(a);
 			Metrix::Print<double>(a);
-			cout<<endl<<"·½³Ì×é½âÎª"<<endl;
+			cout<<endl<<"æ–¹ç¨‹ç»„è§£ä¸º"<<endl;
 			int i=1;
 			for(double(*p)[4]=a;p!=a+3;p++)
 				cout<<"x"<<i++<<"="<<(*p)[3]<<endl;
