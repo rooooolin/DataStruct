@@ -107,7 +107,7 @@ int main(int argv,char *argc[])
 			for (int i = k; i < 2; i++)
 			{
 				double temp=a[i+1][k];
-				for (int j = k; j < 3; j++)
+				for (int j = k; j < 4; j++)
 				{
 					a[i+1][j]-=((temp/a[k][k])*a[k][j]);
 				}
