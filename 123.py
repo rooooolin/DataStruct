@@ -6,21 +6,29 @@ class sqlist:
         self.length=0
 
 def listDelete(L):
-    for i in range(L.length):
-        for j in range(i+1,L.length):
+    i=0
+    while(i<L.length):
+        j=i+1
+        while(j<L.length):
             if L.data[i]==L.data[j]:
-                L.length -= 1
+                L.length -=1
                 for k in range(j,L.length):
                     L.data[k]=L.data[k+1]
-                j -= 1
+            j +=1
+        i+=1
+                
 
 
 
 def listCreat(L):
         tempList=map(int,raw_input().split())
         m=int(tempList[0])
-        for i in range(m):
+        for i in range(len(tempList)-1):
             L.data.append(tempList[i+1])
+        while(len(L.data)<m):
+            tempList2=map(int,raw_input().split())
+            L.data.extend(tempList2)
+        
         L.length=m
 
 
